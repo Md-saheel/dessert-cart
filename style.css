@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+body {
+  font-size: 16px;
+  font-family: 'Red Hat Text', sans-serif;
+  padding: 50px;
+  background-color: whitesmoke;
+}
+
+input {
+  width: 25px;
+  margin: auto;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 8px;
+  margin-left: 12px;
+}
+
+h1 {
+  font-weight: 700;
+  margin: 0;
+  padding: auto;
+}
+
+.dessert-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: -25px;
+}
+
+.menu {
+  display: grid;
+  width: 60%;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+.category {
+  color: grey;
+  font-size: 14px;
+}
+
+.add-cart {
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: white;
+  font-weight: 450;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-left: 60px;
+  padding-left: 15px;
+  border: solid hsl(14, 86%, 42%);
+  left: 5px;
+  gap: 10px;
+}
+
+span {
+  margin-left: 5px;
+  width: 100px;
+}
+
+.dessert {
+  margin: 10px;
+  width: 220px;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: 'Red Hat Text', sans-serif;
+  cursor: pointer;
+}
+
+.cart-section {
+  position: absolute;
+  float: right;
+  background-color: hsl(14, 25%, 72%);
+  width: 30%;
+  height: auto;
+  top: 10%;
+  right: 5%;
+}
+
+.add-btn {
+  margin-right: 15px;
+  padding-right: 10px;
+}
+
+.remove-btn {
+  display: inline;
+  padding-left: 0px;
+}
+
+.add-to-cart {
+  background-color: hsl(14, 86%, 42%);
+  color: white;
+  border-radius: 10px;
+  margin-left: 75px;
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.cart {
+  padding: auto;
+  text-align: center;
+}
+
+p {
+  margin: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+  .cart-section {
+    position: relative;
+    margin-top: 20px;
+    left: 30px;
+    width: 200px;
+  }
+  body {
+    padding-left: 30px;
+  }
+}
