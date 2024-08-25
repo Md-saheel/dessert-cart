@@ -30,25 +30,22 @@ function renderCart() {
   let cartQuantity = 0;
   let cartElements = '';
   let orderTotal = 0;
-  let removeCartValue = Math.random();
 
   cartItems.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
     desserts.forEach((dessert) => {
-      if (dessert.id === cartItem.id) {
-        if (cartItem.quantity > 0) {
-          orderTotal += cartItem.quantity * dessert.price;
-          cartElements += `<p>${dessert.name}</p>
+      if (dessert.id === cartItem.id && cartItem.quantity > 0) {
+        orderTotal += cartItem.quantity * dessert.price;
+        cartElements += `<p>${dessert.name}</p>
         <p>${cartItem.quantity}x   @$${dessert.price}  = $${
-            dessert.price * cartItem.quantity
-          }</p>`;
-        }
+          dessert.price * cartItem.quantity
+        }</p>`;
       }
     });
   });
 
   cartHTML =
-    `<section class="cart ${removeCartValue}"> <h2>Your Cart(${
+    `<section class="cart"> <h2>Your Cart(${
       cartQuantity < 0 ? 0 : cartQuantity
     })</h2>
          ` +
@@ -64,7 +61,6 @@ saveToStorage();
 renderCart();
 document.querySelectorAll('.add-btn').forEach((button) => {
   button.addEventListener('click', () => {
-    // const dessertId = button.dataset.dessertId;
     const cartElement = button.previousElementSibling;
     cartElement.value++;
   });
@@ -72,7 +68,6 @@ document.querySelectorAll('.add-btn').forEach((button) => {
 
 document.querySelectorAll('.remove-btn').forEach((button) => {
   button.addEventListener('click', () => {
-    // const dessertId = button.dataset.dessertId;
     const cartElement = button.nextElementSibling;
     cartElement.value--;
   });
@@ -92,8 +87,6 @@ document.querySelectorAll('.add-to-cart').forEach((button) => {
       }
       saveToStorage();
     });
-    document.querySelector(`.${removeCartValue}`).innerHTML = '';
-    renderCart();
   });
 });
 

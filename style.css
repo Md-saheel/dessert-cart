@@ -4,6 +4,7 @@ body {
   font-size: 16px;
   font-family: 'Red Hat Text', sans-serif;
   padding: 50px;
+  padding-bottom: 0;
   background-color: whitesmoke;
 }
 
@@ -31,9 +32,10 @@ h1 {
 }
 
 .menu {
-  display: grid;
+  display: flex;
   width: 60%;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  flex-wrap: wrap;
+  column-gap: 40px;
 }
 
 p {
@@ -119,26 +121,25 @@ p {
   margin: 3px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (width < 600px) {
   .cart-section {
     position: relative;
-    margin-top: 20px;
+    margin-right: 75px;
+    margin-top: 30px;
     left: 30px;
-    width: 200px;
+    width: 250px;
+    margin-bottom: 40px;
   }
   body {
     padding-left: 30px;
   }
 }
 
-@media only screen and (width < 600px) {
-  .cart-section {
-    position: relative;
-    margin-right: 75px;
-    margin-top: 30px;
-    width: 250px;
-  }
-  body {
-    padding-left: 30px;
-  }
+.attribution {
+  margin-top: 40px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
