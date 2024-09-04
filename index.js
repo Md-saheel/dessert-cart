@@ -9,7 +9,7 @@ function renderDesserts() {
         <br/><section class="add-cart"><button class="remove-btn" data-dessert-id="${
           dessert.id
         }">-</button>
-        <input class="cart-value" value=${1}></input><button class="add-btn" data-dessert-id="${
+        <input class="cart-value" value=${0}></input><button class="add-btn" data-dessert-id="${
       dessert.id
     }">+</button>
         </section>
@@ -18,7 +18,7 @@ function renderDesserts() {
         <p class="price">$${dessert.price}</p>
         <button class="add-to-cart" data-dessert-id="${
           dessert.id
-        }" >add to cart</button>
+        }" >update cart</button>
       </section>`;
   });
   document.querySelector('.js-menu').innerHTML = dessertsHTML;
@@ -69,7 +69,9 @@ document.querySelectorAll('.add-btn').forEach((button) => {
 document.querySelectorAll('.remove-btn').forEach((button) => {
   button.addEventListener('click', () => {
     const cartElement = button.nextElementSibling;
-    cartElement.value--;
+    if (cartElement.value > 0) {
+      cartElement.value--;
+    }
   });
 });
 
@@ -83,7 +85,7 @@ document.querySelectorAll('.add-to-cart').forEach((button) => {
         cartItem.id === Number(dessertId) &&
         0 <= cartItem.quantity + Number(itemQuantity)
       ) {
-        cartItem.quantity += Number(itemQuantity);
+        cartItem.quantity = Number(itemQuantity);
       }
       saveToStorage();
     });
