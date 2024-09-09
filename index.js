@@ -9,7 +9,9 @@ function renderDesserts() {
         <br/><section class="add-cart"><button class="remove-btn" data-dessert-id="${
           dessert.id
         }">-</button>
-        <input class="cart-value" value=${0}></input><button class="add-btn" data-dessert-id="${
+        <input class="cart-value" value=${0} data-dessert-id="${
+      dessert.id
+    }"></input><button class="add-btn" data-dessert-id="${
       dessert.id
     }">+</button>
         </section>
@@ -89,7 +91,16 @@ document.querySelectorAll('.add-to-cart').forEach((button) => {
       }
       saveToStorage();
     });
+    renderCart();
   });
 });
 
-setInterval(renderCart, 1);
+document.querySelectorAll('.cart-value').forEach((valueElement) => {
+  const { dessertId } = valueElement.dataset;
+  cartItems.forEach((cartItem) => {
+    if (cartItem.id === Number(dessertId)) {
+      valueElement.value = cartItem.quantity;
+    }
+    saveToStorage();
+  });
+});
