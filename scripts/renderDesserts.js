@@ -4,7 +4,15 @@ export default function renderDesserts() {
   let dessertsHTML = '';
   desserts.forEach((dessert) => {
     dessertsHTML += `<section class="dessert">
+        <picture>
+        <source media="(max-width:500px)" srcset="${
+          dessert.image.mobile
+        }" class="dessert-img">
+        <source media="(max-width:800px)" srcset="${
+          dessert.image.tablet
+        }" class="dessert-img">
         <img src="${dessert.image.desktop}" class="dessert-img" />
+        </picture>
         <br/><section class="add-cart"><button class="remove-btn" data-dessert-id="${
           dessert.id
         }">-</button>
