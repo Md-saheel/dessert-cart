@@ -15,7 +15,7 @@ export default function renderCart() {
       if (dessert.id === cartItem.id && cartItem.quantity > 0) {
         orderTotal += cartItem.quantity * dessert.price;
         cartElements += `<p class=''>${dessert.name}</p>
-        <p>${cartItem.quantity}x   @$${dessert.price}  = $${
+        <p><span class="price">${cartItem.quantity}x</span>   @$${dessert.price}  = $${
           dessert.price * cartItem.quantity
         }</p>`;
       }
