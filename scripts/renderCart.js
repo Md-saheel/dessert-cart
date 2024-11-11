@@ -15,7 +15,7 @@ export default function renderCart() {
       if (dessert.id === cartItem.id && cartItem.quantity > 0) {
         orderTotal += cartItem.quantity * dessert.price;
         cartElements += `<p class=''>${dessert.name}</p>
-        <p><span class="price">${cartItem.quantity}x</span>   @$${dessert.price}  = $${
+        <p>${cartItem.quantity}x   @$${dessert.price}  = $${
           dessert.price * cartItem.quantity
         }</p>`;
       }
@@ -28,7 +28,10 @@ export default function renderCart() {
       })</h2><hr>
          ` +
       cartElements +
-      `<hr>Order Total = $${orderTotal}<hr></section>`;
+      `<hr>Order Total = $${orderTotal}<hr></section>
+      <button class="check-out-btn" onclick=
+      >Confirm Order</button>
+      `;
   } else {
     cartHTML = `<section class="cart"> <h2>Your Cart(${
       cartQuantity < 0 ? 0 : cartQuantity
