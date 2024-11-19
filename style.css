@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 
+html {
+  height: 98vh;
+}
+
 body {
   font-size: 16px;
   font-family: 'Red Hat Text', sans-serif;
   padding: 50px;
   padding-bottom: 0;
   background-color: hsl(13, 31%, 94%);
+  height: auto;
 }
 
 input:focus {
@@ -98,7 +103,7 @@ button {
   font-weight: 500;
   border-radius: 10px;
   padding-bottom: 2px;
-  bottom: 86vw;
+  bottom: 97vw;
 }
 
 .check-out-btn {
@@ -149,6 +154,9 @@ p {
 }
 
 @media only screen and (width < 500px) {
+  html {
+    height: auto;
+  }
   .cart-section {
     position: relative;
     margin-right: 75px;
@@ -158,21 +166,22 @@ p {
     margin-bottom: 40px;
   }
   body {
-    padding: 0;
+    padding: 15px;
+    height: 80vh;
   }
   .js-menu {
     padding-left: 25px;
     padding-top: 25px;
   }
   .dessert-img {
-    width: 150px;
+    width: 170px;
     height: 150px;
   }
   .add-cart {
     width: 40%;
     height: 30px;
     margin: 0px;
-    margin-left: 15px;
+    margin-left: 25px;
   }
   .cart-value {
     padding: 0;
@@ -187,18 +196,30 @@ p {
   .dessert-name {
     width: 70%;
   }
+  .check-out-btn {
+    margin-bottom: 30px;
+  }
+  .menu {
+    margin-bottom: 30px;
+  }
   .cart-section {
     margin: 0;
     padding-bottom: 0;
-    margin-right: 160px;
+    margin-right: 50px;
     margin-top: 30px;
+    bottom: 40px;
     margin-bottom: 30px;
   }
   .attribution {
-    margin-top: 40px;
     font-size: 11px;
     text-align: center;
-    margin-right: 150px;
+    margin-right: 0px;
+    height: 20px;
+    margin-bottom: 20px;
+  }
+  .check-out-btn {
+    margin-right: 0px;
+    margin-left: 50px;
   }
 }
 
