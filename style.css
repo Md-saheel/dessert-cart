@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 
-
 body {
   font-size: 16px;
   font-family: 'Red Hat Text', sans-serif;
@@ -52,6 +51,12 @@ p {
   color: grey;
   font-size: 14px;
 }
+.cart {
+  background-color: white;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 20px;
+}
 
 .add-cart {
   display: flex;
@@ -89,9 +94,7 @@ button {
 }
 
 .cart-section {
-  position: relative;
-  float: right;
-  background-color: white;
+  position: absolute;
   width: 30%;
   max-width: 350px;
   min-width: 250px;
@@ -100,11 +103,14 @@ button {
   font-weight: 500;
   border-radius: 10px;
   padding-bottom: 2px;
-  bottom: 190vh;
+  top: 15%;
+  right: 5%;
 }
 
 .check-out-btn {
-  position: absolute;
+  padding: 10px;
+  width: 100px;
+  height: 40px;
   margin-top: 20px;
   margin-left: 105px;
   font-weight: 600;
@@ -163,7 +169,7 @@ p {
     margin-bottom: 40px;
   }
   body {
-    padding: 15px;
+    padding: 25px 75px;
     height: 80vh;
   }
   .js-menu {
@@ -202,9 +208,8 @@ p {
   .cart-section {
     margin: 0;
     padding-bottom: 0;
-    margin-right: 50px;
+    margin-left: -30px;
     margin-top: 30px;
-    bottom: 40px;
     margin-bottom: 30px;
   }
   .attribution {
